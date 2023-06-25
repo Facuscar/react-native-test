@@ -14,10 +14,9 @@ const RepositoryItem = ({ repo }) => {
 
   return (
     <View key={repo.id} style={styles.container}>
-      <StyledText bold blue big>Id: {repo.id}</StyledText>
-      <StyledText>Name: {repo.fullName}</StyledText>
-      <StyledText>Description: {repo.description}</StyledText>
-      <StyledText>Language: {repo.language}</StyledText>
+      <StyledText fontSize='subheading' fontWeight='bold'>{repo.fullName}</StyledText>
+      <StyledText>{repo.description}</StyledText>
+      <StyledText>{repo.language}</StyledText>
       <StyledText>Stars: {repo.stargazersCount}</StyledText>
       <StyledText>Forks: {repo.forksCount}</StyledText>
       <StyledText>Rating: {repo.ratingAverage}</StyledText>
