@@ -1,4 +1,8 @@
 export const theme = {
+  appBar: {
+    primary: '#24292e',
+    textPrimary: '#fff'
+  },
   colors: {
     white: '#fff',
     textPrimary: '#24292e',
