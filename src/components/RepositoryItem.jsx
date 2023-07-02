@@ -4,15 +4,21 @@ import { View, StyleSheet } from 'react-native'
 import StyledText from './StyledText'
 
 const RepositoryStats = ({ repo }) => {
+  const parseThousands = value => {
+    return value >= 1000
+      ? `${Math.round(value / 100) / 10}k`
+      : String(value)
+  }
+
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
       <View>
         <StyledText align='center' fontWeight='bold'>Stars</StyledText>
-        <StyledText>{repo.stargazersCount}</StyledText>
+        <StyledText>{parseThousands(repo.stargazersCount)}</StyledText>
       </View>
       <View>
         <StyledText align='center' fontWeight='bold'>Forks</StyledText>
-        <StyledText>{repo.forksCount}</StyledText>
+        <StyledText>{parseThousands(repo.forksCount)}</StyledText>
       </View>
       <View>
         <StyledText align='center' fontWeight='bold'>Reviews</StyledText>
