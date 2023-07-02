@@ -34,7 +34,8 @@ const StyledText = ({ children, align, color, fontSize, fontWeight, style, ...pr
     color === 'primary' && styles.colorPrimary,
     color === 'secondary' && styles.colorSecondary,
     fontSize === 'subheading' && styles.subheading,
-    fontWeight === 'bold' && styles.bold
+    fontWeight === 'bold' && styles.bold,
+    style
   ]
 
   return (
