@@ -15,7 +15,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
-    "react-native-web": "~0.18.10"
+    "react-native-web": "~0.18.10",
+    "react-router-native": "^6.14.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -31,7 +32,11 @@
   "private": true,
   "eslintConfig": {
     "parser": "@babel/eslint-parser",
-    "extends": ["standard", "standard-jsx", "standard-react"],
+    "extends": [
+      "standard",
+      "standard-jsx",
+      "standard-react"
+    ],
     "rules": {
       "react/prop-types": "off"
     }
