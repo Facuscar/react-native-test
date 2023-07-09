@@ -1,7 +1,9 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import StyledText from './StyledText'
+import { Link } from 'react-router-native'
 import Constants from 'expo-constants'
+
+import StyledText from './StyledText'
 import { theme } from '../theme'
 
 const styles = StyleSheet.create({
@@ -16,11 +18,24 @@ const styles = StyleSheet.create({
   }
 })
 
+const AppBarTab = ({ active, children, to }) => {
+  return (
+    <Link to={to}>
+      <StyledText fontWeight='bold' style={styles.text}>
+        {children}
+      </StyledText>
+    </Link>
+  )
+}
+
 const AppBar = () => (
   <View style={styles.container}>
-    <StyledText fontWeight='bold' style={styles.text}>
+    <AppBarTab active to='/'>
       Repositories
-    </StyledText>
+    </AppBarTab>
+    <AppBarTab active to='/signin'>
+      Sign in
+    </AppBarTab>
   </View>
 )
 
