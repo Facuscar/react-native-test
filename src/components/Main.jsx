@@ -1,8 +1,9 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import { Route, Routes } from 'react-router-native'
 
 import RepositoryList from './RepositoryList'
+import LogIn from '../pages/Login'
 import AppBar from './AppBar'
 
 const Main = () => {
@@ -11,7 +12,7 @@ const Main = () => {
       <AppBar />
       <Routes>
         <Route path='/' exact element={<RepositoryList />} />
-        <Route path='/signin' exact element={<Text>Working on it</Text>} />
+        <Route path='/signin' exact element={<LogIn />} />
       </Routes>
     </View>
   )
