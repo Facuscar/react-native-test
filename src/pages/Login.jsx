@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik } from 'formik'
+import { Formik, useField } from 'formik'
 import { Button, StyleSheet, View } from 'react-native'
 
 import StyledTextInput from '../components/StyledTextInput'
@@ -9,6 +9,17 @@ const styles = StyleSheet.create({
     margin: 12
   }
 })
+
+const FormikInputValue = ({ name, ...props }) => {
+  const [field, , helpers] = useField(name)
+  return (
+    <StyledTextInput
+      value={field.value}
+      onChangeText={value => helpers.setValue(value)}
+      {...props}
+    />
+  )
+}
 
 const LogIn = () => {
   const initialValues = {
@@ -20,15 +31,8 @@ const LogIn = () => {
       {({ handleChange, handleSubmit, values }) => {
         return (
           <View style={styles.form}>
-            <StyledTextInput
-              placeholder='E-mail'
-              value={values.email}
-              onChangeText={handleChange('email')}
-            />
-            <StyledTextInput
-              value={values.password}
-              onChangeText={handleChange('password')}
-            />
+            <FormikInputValue name='email' placeholder='E-mail' />
+            <FormikInputValue name='password' secureTextEntry />
             <Button title='Log in' onPress={handleSubmit} />
           </View>
         )
